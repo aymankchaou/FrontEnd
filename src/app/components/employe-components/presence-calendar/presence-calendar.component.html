@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <full-calendar (dayRender)="dayRender($event)" [events]="calendarEvents"
+        [plugins]="calendarPlugins"></full-calendar>
+</div>
+<br>
+<br>
+<div>
+    <input (click)="download(id)" value="{{ 'admin.telecharger' | translate }}" class="btn">
+</div>

@@ -1,0 +1,29 @@
+<h3><i class="fa fa-angle-right"></i> {{ 'admin.reviewv' | translate }}</h3>
+<div>
+  <div>
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table table-striped">
+    <thead class="thead-inverse">
+      <tr>
+        <th>{{ 'admin.nomcomplet' | translate }}</th>
+        <th>{{ 'admin.dated' | translate }}</th>
+        <th>{{ 'admin.jourv' | translate }} </th>
+        <th>{{ 'admin.jourc' | translate }}</th>
+        <th>{{ 'admin.jourr' | translate }} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employe of employees | filter:searchText | paginate: {itemsPerPage:7, currentPage: p}">
+        <td>{{employe.prenom}} {{employe.nom}}</td>
+        <td>{{employe.dateEntree}}</td>
+        <td>{{employe.dureeConges}}</td>
+        <td>{{employe.joursConges}}</td>
+        <td>{{employe.soldeConges}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

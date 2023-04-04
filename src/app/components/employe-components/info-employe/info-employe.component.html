@@ -1,0 +1,73 @@
+<div class="wrapper">
+  <div class="left">
+    <img src="http://localhost:8080/avatar/{{id}}" alt="user" width="150" class="img-circle">
+    <br>
+    <br>
+    <h4>{{user.prenom}} {{user.nom}} </h4>
+    <h2>{{user.fonction}}</h2>
+
+  </div>
+
+  <div class="right">
+
+    <div class="info">
+      <h3> {{ 'admin.coordonne' | translate }}</h3>
+      <div class="info_data">
+        <div class="data">
+          <h4>{{ 'nav.dof' | translate }}</h4>
+          <p> {{user.dateOfBirth}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'nav.tel' | translate }}</h4>
+          <p> {{user.phone}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'nav.email' | translate }}</h4>
+          <p> {{user.email}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.adresse' | translate }}</h4>
+          <p> {{user.adresse}}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="projects">
+
+      <h3> {{ 'admin.post' | translate }}</h3>
+      <div class="info_data">
+        <div class="data">
+          <h4>{{ 'admin.dep' | translate }}</h4>
+          <p> {{user.departement}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.fonction' | translate }}</h4>
+          <p> {{user.fonction}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.typec' | translate }}</h4>
+          <p> {{user.typeContrat}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.datee' | translate }} </h4>
+          <p> {{user.dateEntree}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.salaire' | translate }}</h4>
+          <p> {{user.salary}}</p>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+    <a class="btn" (click)="updateUser(employe)">{{ 'emp.edit' | translate }}</a>
+
+  </div>
+
+
+
+</div>

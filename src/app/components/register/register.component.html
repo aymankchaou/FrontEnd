@@ -1,0 +1,114 @@
+<form class="form-login">
+  <div class="card card-container">
+    <h2 class="form-login-heading">{{ 'nav.para4' | translate }}</h2>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="login-wrap">
+
+        <div class="form-row">
+
+          <div class="col-6">
+            <label for="fname">{{ 'nav.email' | translate }}</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="form.email" placeholder="Email" required
+              email #email="ngModel" [class.is-invalid]="email.invalid && email.touched" />
+
+            <div *ngIf="email.errors && (email.invalid || email.touched)">
+              <small class="text-danger" *ngIf="email.errors.required" [class.d-none]=" email.untouched"
+                style="font-size: 11px;"> {{ 'nav.email1' | translate }}</small>
+            </div>
+          </div>
+          <br>
+
+          <div class="col-6">
+            <label for="fname">{{ 'nav.dof' | translate }}</label>
+            <input type="Date" class="form-control" name="dateOfBirth" [(ngModel)]="form.dateOfBirth"
+              placeholder="{{ 'nav.dof' | translate }}" required minlength="6" #dateOfBirth="ngModel"
+              [class.is-invalid]="dateOfBirth.invalid && dateOfBirth.touched" />
+            <small class="text-danger" [class.d-none]="dateOfBirth.valid || dateOfBirth.untouched"
+              style="font-size: 11px;">{{ 'nav.dof1' | translate }}</small>
+
+          </div>
+
+        </div>
+        <br>
+        <div class="form-row">
+          <div class="col-6">
+            <label for="fname">{{ 'nav.tel' | translate }}</label>
+            <input type="tel" class="form-control" name="phone" placeholder="{{ 'nav.tel1' | translate }}" [(ngModel)]="form.phone" required
+              minlength="8" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched" />
+            <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+              <small class="text-danger" *ngIf="phone.errors.required" [class.d-none]=" phone.untouched"
+                style="font-size: 11px;"> {{ 'nav.tel2' | translate }}</small>
+              <small class="text-danger" *ngIf="phone.errors.minlength" [class.d-none]=" phone.untouched"
+                style="font-size: 11px;"> {{ 'nav.tel3' | translate }}</small>
+
+            </div>
+
+          </div>
+          <br>
+          <div class="col-6">
+            <label for="fname">{{ 'nav.username0' | translate }}</label>
+            <input type="text" class="form-control" name="{{ 'nav.username0' | translate }}" [(ngModel)]="form.username" required minlength="3"
+              maxlength="20" #username="ngModel" placeholder="username" autofocus=""
+              [class.is-invalid]="username.invalid && username.touched" />
+
+            <div *ngIf="username.errors && (username.invalid || username.touched)">
+              <small class="text-danger" *ngIf="username.errors.required" [class.d-none]=" username.untouched"
+                style="font-size: 11px;"> {{ 'nav.username1' | translate }}</small>
+              <small class="text-danger" *ngIf="username.errors.minlength" [class.d-none]=" username.untouched"
+                style="font-size: 11px;"> {{ 'nav.username2' | translate }}</small>
+              <small class="text-danger" *ngIf="username.errors.maxlength" [class.d-none]=" username.untouched"
+                style="font-size: 11px;"> {{ 'nav.username3' | translate }}</small>
+            </div>
+
+          </div>
+        </div>
+        <br>
+        <div class="form-row">
+          <div class="col-6">
+            <label for="fname">{{ 'nav.password0' | translate }}</label>
+            <input type="password" class="form-control" name="{{ 'nav.password0' | translate }}" [(ngModel)]="form.password" required
+              minlength="6" #password="ngModel" placeholder="{{ 'nav.password0' | translate }}"
+              [class.is-invalid]="password.invalid && password.touched" />
+
+
+            <div *ngIf="password.errors && (password.invalid || password.touched)">
+              <small class="text-danger" *ngIf="password.errors.required" [class.d-none]=" password.untouched"
+                style="font-size: 11px;"> {{ 'nav.password1' | translate }}</small>
+              <small class="text-danger" *ngIf="password.errors.minlength" [class.d-none]=" password.untouched"
+                style="font-size: 11px;"> {{ 'nav.password2' | translate }}</small>
+            </div>
+
+          </div>
+          <br>
+          <div class="col-6">
+            <label for="fname">{{ 'nav.confirme' | translate }}</label>
+            <input type="password" class="form-control" name="repassword" [(ngModel)]="form.repassword" required
+              minlength="6" #repassword="ngModel" placeholder="{{ 'nav.password0' | translate }}"
+              [class.is-invalid]="repassword.invalid && repassword.touched" />
+
+
+            <div *ngIf="repassword.errors && (repassword.invalid || repassword.touched)">
+              <small class="text-danger" *ngIf="repassword.errors.required" [class.d-none]=" repassword.untouched"
+                style="font-size: 11px;"> {{ 'nav.password1' | translate }}</small>
+              <small class="text-danger" *ngIf="repassword.errors.minlength" [class.d-none]=" repassword.untouched"
+                style="font-size: 11px;"> {{ 'nav.password2' | translate }}</small>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <div>
+          <button class="btn btn-theme btn-block" (click)="onSubmit()" type="button">
+            <i class="fa fa-lock"></i> {{ 'nav.signup' | translate }}</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="success" *ngIf="isSuccessful">
+      {{ 'nav.success' | translate }}
+    </div>
+
+  </div>
+
+
+</form>

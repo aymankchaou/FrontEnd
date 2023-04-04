@@ -1,0 +1,21 @@
+.fc-view-container *, .fc-view-container *:before, .fc-view-container *:after {
+    box-sizing: content-box;
+    font-size: 16px;
+}
+input{
+    color : black;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+}
+.btn{
+    background-color: #4ECDC4;
+   
+    margin-left: 28%;
+    top:80%;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px 5px;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}

@@ -1,0 +1,46 @@
+<!--header start-->
+<header class="header black-bg">
+  <div class="sidebar-toggle-box">
+    <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+  </div>
+  <!--logo start-->
+  <a href="index.html" class="logo"><b>HR<span>Plus</span></b></a>
+  <!--logo end-->
+
+  <div class="nav notify-row" id="top_menu">
+    <!--  notification start -->
+    <ul class="nav top-menu" *ngIf="!isLoggedIn">
+      <!-- settings start -->
+      <li class="dropdown">
+        <a class="btn btn1" routerLink="/home">{{ 'nav.home' | translate }}</a>
+      </li>
+      <li class="dropdown">
+        <select class="btn btn1" (change)="useLang($event.target.value)">
+          <option *ngFor="let item of supportLanguages" [value]="item">{{item}}</option>
+        </select>
+      </li>
+    </ul>
+    <!--  notification end -->
+  </div>
+
+  <div class="top-menu">
+
+    <ul class="nav pull-right top-menu" *ngIf="!isLoggedIn">
+
+
+      <li>
+        <a href="/register" class="logout" routerLink="/register">{{ 'nav.signup' | translate }}</a>
+      </li>
+      <li>
+        <a href="/login" class="logout" routerLink="/login">{{ 'nav.login' | translate }}</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="nav pull-right top-menu" *ngIf="isLoggedIn">
+      <li><a class="logout" (click)="logout()">{{ 'nav.logout' | translate }}</a></li>
+    </ul>
+  </div>
+</header>
+<!--header end-->

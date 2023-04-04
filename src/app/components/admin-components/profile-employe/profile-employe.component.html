@@ -1,0 +1,93 @@
+<div class="wrapper">
+  <div class="left">
+    <img src="http://localhost:8080/avatar/{{employe.idUser}}" alt="user" width="150" class="img-circle"
+      (click)="updatePhoto(employe)">
+    <br>
+    <br>
+    <h4>{{employe.prenom}} {{employe.nom}} </h4>
+    <h2>{{employe.fonction}}</h2>
+
+  </div>
+
+  <div class="right">
+
+    <div class="info">
+      <h3> {{ 'admin.coordonne' | translate }}</h3>
+      <div class="info_data">
+        <div class="data">
+          <h4>{{ 'nav.dof' | translate }}</h4>
+          <p> {{employe.dateOfBirth}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'nav.tel' | translate }}</h4>
+          <p> {{employe.phone}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'nav.email' | translate }}</h4>
+          <p> {{employe.email}}</p>
+        </div>
+
+
+      </div>
+
+      <div class="info_data">
+
+        <div class="data">
+          <h4>{{ 'admin.adresse' | translate }}</h4>
+          <p> {{employe.adresse}}</p>
+        </div>
+
+        <div class="data">
+          <h4>{{ 'admin.cin' | translate }}</h4>
+          <p> {{employe.cin}}</p>
+        </div>
+
+        <div class="data">
+          <h4>CNSS</h4>
+          <p> {{employe.cnss}}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="projects">
+
+      <h3> {{ 'admin.post' | translate }}</h3>
+      <div class="info_data">
+        <div class="data">
+          <h4>{{ 'admin.dep' | translate }}</h4>
+          <p> {{employe.departement}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.fonction' | translate }}</h4>
+          <p> {{employe.fonction}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.typec' | translate }}</h4>
+          <p> {{employe.typeContrat}}</p>
+        </div>
+
+
+      </div>
+
+      <div class="info_data">
+        <div class="data">
+          <h4>{{ 'admin.datee' | translate }} </h4>
+          <p> {{employe.dateEntree}}</p>
+        </div>
+        <div class="data">
+          <h4>{{ 'admin.salaire' | translate }}</h4>
+          <p> {{employe.salary}}</p>
+        </div>
+        <div class="data">
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
