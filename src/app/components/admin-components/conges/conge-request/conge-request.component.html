@@ -71,7 +71,8 @@
                   <button type="button" class="close" data-dismiss="modal" (click)="showModal2=false">&times;</button>
                   <h4 class="modal-title"></h4>
                 </div>
-                <input type="text" [(ngModel)]="commentaire">
+                <textarea type="text" [(ngModel)]="commentaire" name="commentaire" id="commentaire" placeholder="Commentaire" rows="5">
+                </textarea>
                 <div class="modal-footer">
                   <div>
                     <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onRefuseConge()"
